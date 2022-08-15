@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Strasbourg</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="Carte_interactive.css" />
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<body>
+
+  <h2>Etat de la pollution sur le territoire de <br>l'Eurométropole de Strasbourg </h2>
+  <hr>
+  <div class="texte">
+    Les deux cartes de cette page sont <strong>intéractives</strong>. Il est possible de <strong>zoomer</strong>,
+    de <strong>modifier l'affichage</strong> des couches (icone en haut à droite) et de <strong>cliquer</strong>
+    sur les entités.
+    <br>
+    <br>
+    Il est possible d'<strong>agrandir les tableaux</strong> en cliquant dessus.
+  </div>
+  <hr>
+  <!--
+  <div class="popup" onclick="myFunction()"> test
+    <span class="popuptext" id="myPopup">A Simple Popup!</span>
+  </div>
+   -->
+  <div class="box">
+
+    <div class="text_c_q">
+      <h3>Etat des lieux dans les communes de l'Eurométropole et dans les quartiers de Strasbourg</h3>
+      <div class="texte">
+        La carte présentée ci-contre, renseigne sur la part de la classe noire dans les <strong>communes</strong> de
+        l'Eurométropole
+        ainsi que dans les <strong>quartiers</strong> de la ville de Strasbourg. <br>
+        La classe noire correspond aux zones du territoire ayant une intensité lumineuse nulle. Dans ces zones, il n'y a
+        donc aucune source de lumière artificielle. <br>
+        <br>
+        Les communes d'<strong>Osthoffen</strong>, de <strong>Kolbsheim</strong>, de <strong>Breuschwickersheim</strong>
+        et de <strong>Blaesheim</strong> visiblent sur la carte ne font pas parties de la zone photographiée
+        Elles figurent tout de même sur cette carte étant donné qu'elles font parties de l'Eurométropole.
+        <br>
+        <br>
+        A partir de la classification réalisée, le poids que chaque classe a été calculé pour les communes de
+        l'Eurométropole et les quartiers de la ville de Strasbourg. <br>
+        <br>
+        Les tableaux ci-dessous présentent les résultats, en <strong>pourcentage</strong>, par commune (à gauche) et par
+        quartier (à droite). 
+        
+        Les aplats de couleurs sont discrétisés selon les <strong>quantiles</strong>, calculés <strong>séparément</strong> pour les communes et les quartiers.
+        <br>
+        En ce qui concerne la carte intéractive ci-contre, une discrétisation selon les <strong>quantiles</strong> a également été appliquée, à la différence 
+        qu'elle a été calculée sur les valeurs des commnes et des quartiers <strong>regroupées</strong>.
+      </div>
+      <div class="tables">
+        <img class="myImages" id="table2" src="Images/Table_quartier.png"
+          alt="Part de la classe noire (en %) dans les quartiers de Strasbourg <br> Les superficies sont exprimées en km²">
+
+        <img class="myImages" id="table" src="Images/Table_commune.png"
+          alt="Part de la classe noire (en %) dans les communes de l'Eurométropole de Strasbourg <br> Les superficies sont exprimées en km²">
+
+      </div>
+
+    </div>
+
+    <div id="map"></div>
+
+  </div>
+
+
+  <div class="box">
+
+    <div class="text_c_q">
+      <h3>Etat des lieux dans les zones artificialisées des communes de l'Eurométropole de Strasbourg</h3>
+      <div class="texte">
+        En complément du traitement précédent, la carte et le tableau ci-contre présentent la part de la classe noire dans les 
+        <strong>zones artificialisées</strong> des communes de l'Eurométropole.<br>
+        <br>
+        Les zones artificialisées correspondent aux habitations, aux zones d'activités, aux infrastructures collectives, aux espaces 
+        verts urbains et aux réseaux de transport.
+        Ces zones sont représentées en blanc sur la carte. <br>
+        <br>
+        Dans le tableau ci-dessous, les valeurs sont discrétisées  selon les quantiles pour les communes. <br>
+        Pour la carte interactive  ci-contre, la discrétisation utilisée  est la même que celle appliquée sur la carte précédente.<br>
+
+      </div>
+      <div class="tables">
+        <img class="myImages" id="table5" src="Images/Table_commune_OCS.png"
+          alt="Part de la classe noire (en %) dans les zones artificialisées des communes de l'Eurométropole de Strasbourg <br> Les superficies sont exprimées en km²">
+
+      </div>
+
+    </div>
+
+    <div id="map3"></div>
+
+  </div>
+
+
+
+
+
+  <div class="box2">
+    <div id="map2"></div>
+    <div class="text_c_q">
+      <h3>Etat des lieux dans les réservoirs de biodiversité de la Trame Verte et Bleue du territoire de l'Eurométropole de Strasbourg
+      </h3>
+
+      <div class="texte">
+        La carte ci-contre présente la part de la classe noire dans les <strong>réservoirs de biodiversité</strong> de
+        la Trame Verte et
+        Bleue présents
+        sur le territoire de l'Eurométropole.<br>
+        <br>
+        Le tableau ci-dessous détaille les résultats, en <strong>pourcentage</strong>, par réservoir. 
+        
+        Les aplats de couleurs sont discrétisés selon les <strong>quantiles</strong>. 
+        La même discrétisation a été utilisée pour la carte intéractive ci-contre.
+        <div class="tables2">
+
+          <img class="myImages" id="table3" src="Images/Table_TVB.png"
+            alt="Part de la classe noire (en %) dans les réservoirs de biodiversité de la Trame Verte et Bleue <br> Les surfaces sont exprimées en km²">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  </div>
+
+
+
+
+  <footer class="footer">
+    <div class="g1">
+      <a href="https://mastergeonum.org/">
+        <img id="master" src="https://mastergeonum.files.wordpress.com/2021/10/rvb_original.png"></a>
+    </div>
+    <div class="g2">
+      <p style="text-align: center; font-size: 14px;">Page et carte réalisées par Mathilde MAUGER-VAUGLIN
+        <br><a href="https://www.strasbourg.eu/">Eurométropole de Strasbourg</a> -
+        <a href="https://live.unistra.fr/">LIVE</a>
+    </div>
+    <div class="g3">
+      <a href="https://www.strasbourg.eu/">
+        <img class="EMS" src=https://www.leforumdd.fr/uploads/images/partenaires-2015/logo-Strasbourg.jpg>
+      </a>
+      <a href="https://live.unistra.fr/">
+        <img class="Live"
+          src=https://www.alsace.cnrs.fr/sites/delegation_dr10/files/styles/article/public/image/logo_LIVE.jpg?itok=w5gevD9m>
+      </a>
+      <a href="https://www.cnrs.fr/fr/page-daccueil">
+        <img class="CNRS"
+          src=https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Centre_national_de_la_recherche_scientifique.svg/langfr-1024px-Centre_national_de_la_recherche_scientifique.svg.png>
+      </a>
+    </div>
+  </footer>
+
+
+  <script src="Donnees/Quartier_classe.js"></script>
+  <script src="Donnees/Commune_classe.js"></script>
+  <script src="Donnees/Commune_limite.js"></script>
+  <script src="Donnees/Strasbourg_limite.js"></script>
+  <script src="Donnees/Strasbourg_quartier_limite.js"></script>
+  <script src="Donnees/TVB_classe.js"></script>
+  <script src="Donnees/Commune_limite_line.js"></script>
+  <script src="Donnees/Commune_limite_line2.js"></script>
+  <script src="Donnees/Commune_nodata.js"></script>
+  <script src="Donnees/Commune_nodata2.js"></script>
+  <script src="Donnees/Commune_OCS.js"></script>
+  <script src="Donnees/Classif_OCS_zone_artif.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script type="text/javascript" src="Carte_interactive.js"></script>
+
+
+
+
+</body>
+
+</html>

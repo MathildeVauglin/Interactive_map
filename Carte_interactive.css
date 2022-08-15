@@ -1,0 +1,485 @@
+body {
+    background-color: rgb(224, 224, 224);
+}
+
+h2 {
+    font-family: Raleway;
+    color: #000000;
+    font-weight: 9000;
+    font-size: 30px;
+    margin: 2% 2% 2% 2%;
+    text-align: center;
+}
+
+#map {
+    display: flex;
+    width: 50%;
+    margin: 2% 2% 2% 2%;
+    height: 100vh;
+    z-index: 10
+}
+
+.map-scroll:before {
+    content: 'Ctrl + scroll pour zoomer sur la carte';
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    z-index: 999;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.map-scroll:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: '';
+    background: #ffffff23;
+    z-index: 999;
+}
+
+.text_c_q {
+    width: 50%;
+    margin: 2% 2% 2% 2%;
+    text-align: justify;
+}
+
+h3 {
+    font-family: Raleway;
+    color: #000000;
+    font-weight: 5000;
+    font-size: 20px;
+    margin: 2% 1% 1% 1%;
+}
+
+.texte {
+    text-align: justify;
+    font-size: 15px;
+    font-family: Raleway;
+    margin: 2% 2% 2% 2%;
+}
+
+#map2 {
+    display: flex;
+    width: 50%;
+    margin: 2% 2% 2% 2%;
+    height: 100vh;
+    z-index: 10
+}
+
+.map2-scroll:before {
+    content: 'Ctrl + scroll pour zoomer sur la carte';
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    z-index: 999;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.map2-scroll:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: '';
+    background: #ffffff23;
+    z-index: 999;
+}
+
+
+
+
+#map3 {
+    display: flex;
+    width: 42%;
+    margin: 2% 2% 2% 2%;
+    height: 100vh;
+    z-index: 10
+}
+
+.map3-scroll:before {
+    content: 'Ctrl + scroll pour zoomer sur la carte';
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    z-index: 999;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.map3-scroll:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    content: '';
+    background: #ffffff23;
+    z-index: 999;
+}
+
+
+.text_TVB {
+    width: 50%;
+    margin: 2% 2% 2% 2%;
+}
+
+.box {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box1 {
+    display: flex;
+}
+
+.box2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.legend {
+    padding: 6px 8px;
+    font: 14px/16px Raleway;
+    color: rgb(255, 255, 255);
+    background-color: rgba(61, 61, 61, 0.733);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    width: 215px;
+    text-align: justify;
+}
+
+
+.legend i {
+    width: 25px;
+    height: 18px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 1px;
+    opacity: 0.7;
+}
+
+.legend l {
+    width: 25px;
+    height: 5px;
+    float: left;
+    margin-right: 4px;
+    margin-top: 7px;
+}
+
+.legend m {
+    width: 5px;
+    height: 3px;
+    float: left;
+    margin-right: 2px;
+    margin-top: 9px;
+}
+
+.legend texte {
+    margin-left: 10px;
+}
+
+
+
+.tables {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tables2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#table {
+    order: 1;
+    width: 360px;
+    height: 370px;
+    margin: 1% 1% 1% 1%;
+}
+
+#table2 {
+    order: 2;
+    width: 390px;
+    height: 360px;
+    margin: 1% 1% 1% 1%;
+}
+#table5 {
+    order: 1;
+    width: 440px;
+    height: 480px;
+    margin: 1% 1% 1% 1%;
+}
+
+
+
+
+
+
+
+.myImages {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 480px;
+    height: 410px;
+    margin: 5% 1% 1% 1%;
+
+}
+
+.myImages:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 100;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 70%;
+    max-width: 610px;
+}
+
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    font: 16px Raleway;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 20px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+.footer {
+    display: flex;
+    background: #000000;
+    flex-basis: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 80px;
+    width: 100%;
+    color: white;
+    font-family: Raleway;
+    font-size: 1.25rem;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    float: right;
+
+}
+
+.g1 {
+    display: flex;
+    gap: 50px;
+    order: 1;
+}
+
+p {
+    font-family: Raleway;
+    line-height: 150%;
+}
+
+a {
+    color: #ffd500;
+}
+
+.g2 {
+    align-self: center;
+    display: flex;
+    gap: 50px;
+    order: 2;
+    font-size: 15px;
+    font-family: Raleway;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.g3 {
+    display: flex;
+    gap: 50px;
+    order: 3;
+    align-items: center;
+}
+
+#master {
+    order: 2;
+    width: 80px;
+    height: 80;
+}
+
+.EMS {
+    order: 1;
+    width: 200px;
+    height: 75;
+
+}
+
+.Live {
+    order: 2;
+    width: 180px;
+    height: 75;
+
+}
+
+.CNRS {
+    order: 3;
+    width: 80px;
+    height: 75;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ Popup container - can be anything you want 
+.box .box1 .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ The actual popup 
+.box .box1 .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+ Popup arrow 
+.box .box1 .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+ Toggle this class - hide and show the popup 
+.box .box1 .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+*/
